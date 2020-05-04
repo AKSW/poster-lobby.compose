@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  mumble-server:
+    image: coppit/mumble-server
+    container_name: mumble-server
+    volumes:
+      - "./data/mumble-server:/data"
+    ports:
+      - "64738:64738"
+      - "64738:64738/udp"
+  mumble-web:
+    image: aksw/mumble-web
+    container_name: mumble-web
+    ports:
+      - "8080:8080"
+    environment:
+      - MUMBLE_SERVER=mumble-server:64738
