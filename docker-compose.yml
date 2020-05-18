@@ -1,13 +1,15 @@
 version: "3.7"
 services:
   mumble-server:
-    image: coppit/mumble-server
+    image: sudoforge/mumble-server
     container_name: mumble-server
     volumes:
       - "./data/mumble-server:/data"
     ports:
       - "64738:64738"
       - "64738:64738/udp"
+    environment:
+      - MUMBLE_SERVERPASSWORD=safepassword
   mumble-web:
     image: aksw/mumble-web
     container_name: mumble-web
