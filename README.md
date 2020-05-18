@@ -1,8 +1,7 @@
 ## Steps to make it work:
 
 ### mumble-server
-permissions for ./data/mumble-server 108:111 (see also: https://github.com/coppit/docker-mumble-server/issues/5)
-start the mumble-server twice, in the first run it just creates the mumble-server.ini in the second run it will start the server
+We are using this image: https://github.com/sudoforge/docker-images/tree/master/mumble-server
 
 
 ### mumble-web
