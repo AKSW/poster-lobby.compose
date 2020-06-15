@@ -28,4 +28,3 @@ services:
       - CERTIFICATE_LOCATION=/pem/fullchain.pem
       - KEY_LOCATION=/pem/privkey.pem
         #command: websockify --cert=$CERTIFICATE_LOCATION --key=$KEY_LOCATION --ssl-target --web=/home/node/dist 8080 "$MUMBLE_SERVER"
-    command: websockify --cert=/pem/fullchain.pem --key=/pem/privkey.pem --ssl-target --web=/home/node/dist 8080 "mumble-server:64738"
