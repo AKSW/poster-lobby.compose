@@ -6,6 +6,33 @@ volumes:
   poster-data:
   nginx-config:
 
+# for local test setup
+# volumes:
+#   mumble-server-data:
+#     driver: local
+#         driver_opts:
+#             type: none
+#             device: ./data/mumble-server
+#             o: bind
+#   mumble-web-data:
+#     driver: local
+#         driver_opts:
+#             type: none
+#             device: ./data
+#             o: bind
+#   poster-data:
+#     driver: local
+#         driver_opts:
+#             type: none
+#             device: ./data/poster-data
+#             o: bind
+#   nginx-config:
+#     driver: local
+#         driver_opts:
+#             type: none
+#             device: ./data/nginx-config
+#             o: bind
+
 services:
   mumble-server:
     image: sudoforge/mumble-server
@@ -37,7 +64,7 @@ services:
     container_name: poster-data
     restart: always
     volumes:
-      - poster-data:/var/www
+      - poster-data:/var/www/html
       - nginx-config:/etc/nginx/conf.d
       - mumble-web-data:/pem
     ports:
