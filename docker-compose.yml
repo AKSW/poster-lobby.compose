@@ -22,7 +22,7 @@ services:
     volumes:
       - mumble-web-data:/pem
     ports:
-      - "8080:8080"
+      - "80:8080"
     environment:
       - MUMBLE_SERVER=mumble-server:64738
       - CERTIFICATE_LOCATION=/pem/fullchain.pem
