@@ -8,6 +8,7 @@ services:
   mumble-server:
     image: sudoforge/mumble-server
     container_name: mumble-server
+    restart: always
     volumes:
       - mumble-server-data:${MUMBLE_SERVER_DATA_DESTINATION_PATH}
     ports:
@@ -19,6 +20,7 @@ services:
   mumble-web:
     image: aksw/mumble-web
     container_name: mumble-web
+    restart: always
     volumes:
       - mumble-web-data:/pem
     ports:
