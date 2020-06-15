@@ -2,5 +2,6 @@
   "small": "https://www.jpl.nasa.gov/visions-of-the-future/images/earth-small.jpg",
   "large": "https://www.jpl.nasa.gov/visions-of-the-future/images/earth.jpg",
   "author": "NASA",
-  "title": "Earth"
+  "title": "Earth",
+  "notes": "If you want to see a live-demo of the Earth please check out this video: <a href=\"https://www.youtube.com/watch?v=ufZoZzDjjzE\">you should really check this out</a>"
 }
