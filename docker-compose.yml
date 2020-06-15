@@ -3,6 +3,8 @@ version: "3.7"
 volumes:
   mumble-server-data:
   mumble-web-data:
+  poster-data:
+  nginx-config:
 
 services:
   mumble-server:
@@ -30,3 +32,14 @@ services:
       - CERTIFICATE_LOCATION=/pem/fullchain.pem
       - KEY_LOCATION=/pem/privkey.pem
         #command: websockify --cert=$CERTIFICATE_LOCATION --key=$KEY_LOCATION --ssl-target --web=/home/node/dist 8080 "$MUMBLE_SERVER"
+  poster-data:
+    image: nginx
+    container_name: poster-data
+    restart: always
+    volumes:
+      - poster-data:/var/www
+      - nginx-config:/etc/nginx/conf.d
+      - mumble-web-data:/pem
+    ports:
+      - "80:80"
+      - "8080:8080"
